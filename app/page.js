@@ -425,11 +425,11 @@ export default function Homepage() {
           <div className="space-y-12">
             {/* Main Team Photo */}
             <div className="relative">
-              <img
-                src="https://ucarecdn.com/bfe66f4a-61f8-49a6-86d8-361b4fec70a7/-/format/auto/"
-                alt="Taaruvya Team"
-                className="w-full max-w-4xl mx-auto rounded-2xl shadow-lg"
-              />
+             <img
+  src="https://ucarecdn.com/bfe66f4a-61f8-49a6-86d8-361b4fec70a7/-/format/auto/ "
+  alt="Taaruvya Team"
+  className="w-full max-w-4xl mx-auto rounded-2xl shadow-lg border-4 border-[#2F5233]"
+/>
             </div>
 
             {/* Team Presentation Photo */}
