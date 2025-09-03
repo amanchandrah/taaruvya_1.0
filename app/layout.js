@@ -19,9 +19,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head>
-        <link rel="icon" href="/favicon.png" />
-      </head>
+     <head>
+  <link rel="icon" href="https://taaruvya.in/favicon.png" />
+  <link rel="apple-touch-icon" href="https://taaruvya.in/favicon.png" />
+  <meta property="og:image" content="https://taaruvya.in/favicon.png" />
+  <meta name="twitter:image" content="https://taaruvya.in/favicon.png" />
+</head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
