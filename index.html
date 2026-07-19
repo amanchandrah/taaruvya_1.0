@@ -1,315 +1,1091 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>TERAMO — GI-Based Desserts of Karnataka · Simply Local</title>
-<meta name="description" content="Micro-batch artisanal ice creams crafted from Karnataka's GI-tagged harvests — Coorg cardamom, Mysore paan, Kolar guava, Coastal kokum, Malnad jackfruit. Order weekly batches on WhatsApp.">
-<link rel="icon" href="assets/logo.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-:root{
-  --green:#1c3a2a;      /* deep forest — logo ring & wordmark */
-  --olive:#6d8a2f;      /* leaf olive */
-  --gold:#a8862d;       /* antique gold ring */
-  --gold-l:#c9a84c;
-  --cream:#f7f2e6;      /* label cream */
-  --cream-d:#efe7d3;
-  --ink:#24301f;
-  --serif:'Cormorant Garamond',serif;
-  --sans:'Jost',sans-serif;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.6;overflow-x:hidden}
-img{max-width:100%;display:block}
-h1,h2,h3{font-family:var(--serif);color:var(--green);font-weight:600;line-height:1.15}
-.wrap{width:min(1140px,92%);margin:0 auto}
-.eyebrow{font-family:var(--sans);text-transform:uppercase;letter-spacing:.35em;font-size:.72rem;color:var(--gold);font-weight:500}
-.sec{padding:clamp(4rem,9vw,7.5rem) 0}
-.sec-head{text-align:center;max-width:620px;margin:0 auto 3.2rem}
-.sec-head h2{font-size:clamp(2rem,4.5vw,3rem);margin:.55rem 0 .8rem}
-.sec-head p{color:#54604a}
-.rule{width:56px;height:1px;background:var(--gold);margin:1.1rem auto 0;position:relative}
-.rule::after{content:"";position:absolute;left:50%;top:-3px;width:7px;height:7px;background:var(--gold);transform:translateX(-50%) rotate(45deg)}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>TERAMO — GI-Based Desserts of Karnataka · Simply Local</title>
+  <meta name="description"
+    content="Micro-batch artisanal ice creams crafted from Karnataka's GI-tagged harvests — Coorg cardamom, Mysore paan, Kolar guava, Coastal kokum, Malnad jackfruit. Order weekly batches on WhatsApp.">
+  <link rel="icon" href="assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --green: #1c3a2a;
+      /* deep forest — logo ring & wordmark */
+      --olive: #6d8a2f;
+      /* leaf olive */
+      --gold: #a8862d;
+      /* antique gold ring */
+      --gold-l: #c9a84c;
+      --cream: #f7f2e6;
+      /* label cream */
+      --cream-d: #efe7d3;
+      --ink: #24301f;
+      --serif: 'Cormorant Garamond', serif;
+      --sans: 'Jost', sans-serif;
+    }
 
-/* reveal */
-.rv{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
-.rv.in{opacity:1;transform:none}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+    }
 
-/* nav */
-nav{position:fixed;inset:0 0 auto;z-index:50;background:rgba(247,242,230,.55);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(168,134,45,.25);transition:background .3s}
-nav.solid{background:rgba(247,242,230,.88)}
-.nav-in{display:flex;align-items:center;justify-content:space-between;height:74px}
-.brand{display:flex;align-items:center;gap:.75rem;text-decoration:none}
-.brand img{width:50px;height:50px;border-radius:50%;box-shadow:0 2px 10px rgba(28,58,42,.25)}
-.brand span{font-family:var(--serif);font-size:1.45rem;letter-spacing:.14em;color:var(--green);font-weight:600}
-.nav-links{display:flex;gap:2rem;align-items:center;list-style:none}
-.nav-links a{text-decoration:none;color:var(--green);font-size:.82rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500;transition:color .2s}
-.nav-links a:hover{color:var(--gold)}
-@media(max-width:820px){.nav-links li:not(.cta-li){display:none}}
+    html {
+      scroll-behavior: smooth
+    }
 
-/* buttons */
-.btn{display:inline-flex;align-items:center;gap:.6rem;background:linear-gradient(135deg,var(--green),#2c5540);color:var(--cream);text-decoration:none;font-family:var(--sans);font-size:.85rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;padding:1rem 2.1rem;border-radius:999px;border:1px solid rgba(201,168,76,.55);box-shadow:0 8px 24px rgba(28,58,42,.28);transition:transform .25s,box-shadow .25s}
-.btn:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(28,58,42,.35)}
-.btn svg{width:18px;height:18px;fill:var(--gold-l)}
-.btn.sm{padding:.65rem 1.4rem;font-size:.72rem}
-.btn.ghost{background:transparent;color:var(--green);border:1px solid var(--gold)}
-.btn.ghost svg{fill:var(--gold)}
+    body {
+      font-family: var(--sans);
+      color: var(--ink);
+      background: var(--cream);
+      line-height: 1.6;
+      overflow-x: hidden
+    }
 
-/* hero */
-header{position:relative;min-height:100svh;display:flex;align-items:center;background:
- radial-gradient(60rem 40rem at 85% -10%,rgba(109,138,47,.16),transparent 60%),
- radial-gradient(50rem 36rem at -10% 110%,rgba(168,134,45,.14),transparent 60%),
- linear-gradient(180deg,var(--cream) 0%,var(--cream-d) 100%)}
-.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:3rem;align-items:center;padding:8rem 0 4rem}
-.hero h1{font-size:clamp(2.6rem,6vw,4.4rem);margin:1rem 0 1.2rem}
-.hero h1 em{font-style:italic;color:var(--olive)}
-.hero p.lead{font-size:1.08rem;color:#4c5945;max-width:34rem;margin-bottom:2.2rem}
-.hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
-.hero-badge{justify-self:center;position:relative;margin-top:4rem}
-.hero-badge img{width:min(460px,84vw);border-radius:50%;box-shadow:0 30px 70px rgba(28,58,42,.30);animation:float 7s ease-in-out infinite}
-.hero-badge::before{content:"";position:absolute;inset:-5px;border:1.5px solid rgba(168,134,45,.5);border-radius:50%;animation:spin 40s linear infinite}
-@keyframes float{50%{transform:translateY(-14px)}}
-@keyframes spin{to{transform:rotate(360deg)}}
-.hero-meta{display:flex;gap:2.2rem;margin-top:2.6rem;flex-wrap:wrap}
-.hero-meta div{border-left:1px solid rgba(168,134,45,.5);padding-left:1rem}
-.hero-meta b{font-family:var(--serif);font-size:1.35rem;color:var(--green);display:block}
-.hero-meta span{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:#6a7560}
-@media(max-width:860px){.hero{grid-template-columns:1fr;text-align:center;padding-top:7rem}.hero p.lead{margin-inline:auto}.hero-actions,.hero-meta{justify-content:center}.hero-meta div{text-align:left}.hero-badge{order:-1;margin-top:1rem}.hero-badge img{width:min(320px,78vw)}}
+    img {
+      max-width: 100%;
+      display: block
+    }
 
-/* flavors */
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1.6rem}
-@media(min-width:960px){.grid{grid-template-columns:repeat(3,1fr)}}
-.card{background:#fffdf7;border:1px solid rgba(168,134,45,.25);border-radius:18px;overflow:hidden;box-shadow:0 10px 30px rgba(28,58,42,.08);transition:transform .3s,box-shadow .3s;display:flex;flex-direction:column}
-.card:hover{transform:translateY(-6px);box-shadow:0 22px 44px rgba(28,58,42,.16)}
-.swatch{aspect-ratio:5/4;position:relative;overflow:hidden;background:#122018}
-.swatch img{--z:1;width:100%;height:100%;object-fit:contain;transition:transform .6s;transform:scale(var(--z))}
-.swatch img.z{--z:1.32}
-.card:hover .swatch img{transform:scale(calc(var(--z)*1.06))}
-.swatch::after{content:"";position:absolute;inset:auto 0 0;height:34px;background:#fffdf7;clip-path:ellipse(60% 100% at 50% 100%)}
-.card-b{padding:1.5rem 1.7rem 1.8rem;flex:1;display:flex;flex-direction:column}
-.card h3{font-size:1.5rem;margin-bottom:.15rem}
-.card .tag{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:.7rem}
-.card p{font-size:.92rem;color:#54604a;flex:1}
-.card .igp{margin-top:1.1rem;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--olive);border-top:1px dashed rgba(168,134,45,.4);padding-top:.8rem}
+    h1,
+    h2,
+    h3 {
+      font-family: var(--serif);
+      color: var(--green);
+      font-weight: 600;
+      line-height: 1.15
+    }
 
-/* gallery */
-.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem}
-.gal figure:first-child{grid-column:1/-1}
-@media(min-width:940px){.gal{grid-template-columns:1.3fr 1fr 1fr}.gal figure:first-child{grid-column:auto}}
-.gal figure{position:relative;border-radius:22px;overflow:hidden;background:#fffdf7;border:1px solid rgba(168,134,45,.3);box-shadow:0 16px 40px rgba(28,58,42,.12);padding:2rem}
-.gal img{margin:0 auto;max-height:420px;object-fit:contain;transition:transform .5s}
-.gal figure:hover img{transform:scale(1.04)}
-.gal figcaption{text-align:center;margin-top:1.2rem;font-family:var(--serif);font-size:1.25rem;color:var(--green)}
-.gal figcaption small{display:block;font-family:var(--sans);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
-@media(max-width:720px){.gal{grid-template-columns:1fr}}
+    .wrap {
+      width: min(1140px, 92%);
+      margin: 0 auto
+    }
 
-/* timeline */
-.tl{position:relative;max-width:760px;margin:0 auto}
-.tl::before{content:"";position:absolute;left:27px;top:8px;bottom:8px;width:1px;background:linear-gradient(var(--gold),rgba(168,134,45,.15))}
-.step{position:relative;padding:0 0 2.8rem 84px}
-.step:last-child{padding-bottom:0}
-.step .num{position:absolute;left:0;top:0;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--green),#2c5540);color:var(--gold-l);font-family:var(--serif);font-size:1.5rem;display:flex;align-items:center;justify-content:center;border:1px solid var(--gold);box-shadow:0 8px 20px rgba(28,58,42,.3)}
-.step h3{font-size:1.45rem;margin-bottom:.35rem}
-.step p{color:#54604a;font-size:.95rem;max-width:36rem}
-.step b{color:var(--green)}
+    .eyebrow {
+      font-family: var(--sans);
+      text-transform: uppercase;
+      letter-spacing: .35em;
+      font-size: .72rem;
+      color: var(--gold);
+      font-weight: 500
+    }
 
-/* policy */
-.policy{background:linear-gradient(135deg,#1c3a2a,#254a35);border-radius:24px;padding:clamp(2.2rem,5vw,3.6rem);display:grid;grid-template-columns:auto 1fr;gap:1.8rem;align-items:center;border:1px solid rgba(201,168,76,.4);box-shadow:0 24px 60px rgba(28,58,42,.35)}
-.policy .ico{width:64px;height:64px;border-radius:50%;border:1px solid var(--gold-l);display:flex;align-items:center;justify-content:center;color:var(--gold-l);font-family:var(--serif);font-size:1.6rem}
-.policy h3{color:var(--cream);font-size:clamp(1.4rem,3vw,1.9rem);margin-bottom:.4rem}
-.policy p{color:#cfd8c6;font-size:.95rem;max-width:44rem}
-.policy b{color:var(--gold-l)}
-@media(max-width:620px){.policy{grid-template-columns:1fr;text-align:center}.policy .ico{margin:0 auto}}
+    .sec {
+      padding: clamp(4rem, 9vw, 7.5rem) 0
+    }
+
+    .sec-head {
+      text-align: center;
+      max-width: 620px;
+      margin: 0 auto 3.2rem
+    }
+
+    .sec-head h2 {
+      font-size: clamp(2rem, 4.5vw, 3rem);
+      margin: .55rem 0 .8rem
+    }
+
+    .sec-head p {
+      color: #54604a
+    }
+
+    .rule {
+      width: 56px;
+      height: 1px;
+      background: var(--gold);
+      margin: 1.1rem auto 0;
+      position: relative
+    }
+
+    .rule::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: -3px;
+      width: 7px;
+      height: 7px;
+      background: var(--gold);
+      transform: translateX(-50%) rotate(45deg)
+    }
+
+    /* reveal */
+    .rv {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .8s ease, transform .8s ease
+    }
+
+    .rv.in {
+      opacity: 1;
+      transform: none
+    }
+
+    /* nav */
+    nav {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 50;
+      background: rgba(247, 242, 230, .55);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(168, 134, 45, .25);
+      transition: background .3s
+    }
+
+    nav.solid {
+      background: rgba(247, 242, 230, .88)
+    }
+
+    .nav-in {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 74px
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      text-decoration: none
+    }
+
+    .brand img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      box-shadow: 0 2px 10px rgba(28, 58, 42, .25)
+    }
+
+    .brand span {
+      font-family: var(--serif);
+      font-size: 1.45rem;
+      letter-spacing: .14em;
+      color: var(--green);
+      font-weight: 600
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      list-style: none
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--green);
+      font-size: .82rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: color .2s
+    }
+
+    .nav-links a:hover {
+      color: var(--gold)
+    }
+
+    @media(max-width:820px) {
+      .nav-links li:not(.cta-li) {
+        display: none
+      }
+    }
+
+    /* buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      background: linear-gradient(135deg, var(--green), #2c5540);
+      color: var(--cream);
+      text-decoration: none;
+      font-family: var(--sans);
+      font-size: .85rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      font-weight: 500;
+      padding: 1rem 2.1rem;
+      border-radius: 999px;
+      border: 1px solid rgba(201, 168, 76, .55);
+      box-shadow: 0 8px 24px rgba(28, 58, 42, .28);
+      transition: transform .25s, box-shadow .25s
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 30px rgba(28, 58, 42, .35)
+    }
+
+    .btn svg {
+      width: 18px;
+      height: 18px;
+      fill: var(--gold-l)
+    }
+
+    .btn.sm {
+      padding: .65rem 1.4rem;
+      font-size: .72rem
+    }
+
+    .btn.ghost {
+      background: transparent;
+      color: var(--green);
+      border: 1px solid var(--gold)
+    }
+
+    .btn.ghost svg {
+      fill: var(--gold)
+    }
+
+    /* hero */
+    header {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      background:
+        radial-gradient(60rem 40rem at 85% -10%, rgba(109, 138, 47, .16), transparent 60%),
+        radial-gradient(50rem 36rem at -10% 110%, rgba(168, 134, 45, .14), transparent 60%),
+        linear-gradient(180deg, var(--cream) 0%, var(--cream-d) 100%)
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 3rem;
+      align-items: center;
+      padding: 8rem 0 4rem
+    }
+
+    .hero h1 {
+      font-size: clamp(2.6rem, 6vw, 4.4rem);
+      margin: 1rem 0 1.2rem
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--olive)
+    }
+
+    .hero p.lead {
+      font-size: 1.08rem;
+      color: #4c5945;
+      max-width: 34rem;
+      margin-bottom: 2.2rem
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap
+    }
+
+    .hero-badge {
+      justify-self: center;
+      position: relative;
+      margin-top: 4rem
+    }
+
+    .hero-badge img {
+      width: min(460px, 84vw);
+      border-radius: 50%;
+      box-shadow: 0 30px 70px rgba(28, 58, 42, .30);
+      animation: float 7s ease-in-out infinite
+    }
+
+    .hero-badge::before {
+      content: "";
+      position: absolute;
+      inset: -5px;
+      border: 1.5px solid rgba(168, 134, 45, .5);
+      border-radius: 50%;
+      animation: spin 40s linear infinite
+    }
+
+    @keyframes float {
+      50% {
+        transform: translateY(-14px)
+      }
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg)
+      }
+    }
+
+    .hero-meta {
+      display: flex;
+      gap: 2.2rem;
+      margin-top: 2.6rem;
+      flex-wrap: wrap
+    }
+
+    .hero-meta div {
+      border-left: 1px solid rgba(168, 134, 45, .5);
+      padding-left: 1rem
+    }
+
+    .hero-meta b {
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      color: var(--green);
+      display: block
+    }
+
+    .hero-meta span {
+      font-size: .72rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: #6a7560
+    }
+
+    @media(max-width:860px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding-top: 7rem
+      }
+
+      .hero p.lead {
+        margin-inline: auto
+      }
+
+      .hero-actions,
+      .hero-meta {
+        justify-content: center
+      }
+
+      .hero-meta div {
+        text-align: left
+      }
+
+      .hero-badge {
+        order: -1;
+        margin-top: 1rem
+      }
+
+      .hero-badge img {
+        width: min(320px, 78vw)
+      }
+    }
+
+    /* flavors */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 1.6rem
+    }
+
+    @media(min-width:960px) {
+      .grid {
+        grid-template-columns: repeat(3, 1fr)
+      }
+    }
+
+    .card {
+      background: #fffdf7;
+      border: 1px solid rgba(168, 134, 45, .25);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(28, 58, 42, .08);
+      transition: transform .3s, box-shadow .3s;
+      display: flex;
+      flex-direction: column
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 22px 44px rgba(28, 58, 42, .16)
+    }
+
+    .swatch {
+      aspect-ratio: 5/4;
+      position: relative;
+      overflow: hidden;
+      background: #122018
+    }
+
+    .swatch img {
+      --z: 1;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transition: transform .6s;
+      transform: scale(var(--z))
+    }
+
+    .swatch img.z {
+      --z: 1.32
+    }
+
+    .card:hover .swatch img {
+      transform: scale(calc(var(--z)*1.06))
+    }
+
+    .swatch::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 34px;
+      background: #fffdf7;
+      clip-path: ellipse(60% 100% at 50% 100%)
+    }
+
+    .card-b {
+      padding: 1.5rem 1.7rem 1.8rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column
+    }
+
+    .card h3 {
+      font-size: 1.5rem;
+      margin-bottom: .15rem
+    }
+
+    .card .tag {
+      font-size: .68rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 500;
+      margin-bottom: .7rem
+    }
+
+    .card p {
+      font-size: .92rem;
+      color: #54604a;
+      flex: 1
+    }
+
+    .card .igp {
+      margin-top: 1.1rem;
+      font-size: .7rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--olive);
+      border-top: 1px dashed rgba(168, 134, 45, .4);
+      padding-top: .8rem
+    }
+
+    /* gallery */
+    .gal {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem
+    }
+
+    .gal figure:first-child {
+      grid-column: 1/-1
+    }
+
+    @media(min-width:940px) {
+      .gal {
+        grid-template-columns: 1.3fr 1fr 1fr
+      }
+
+      .gal figure:first-child {
+        grid-column: auto
+      }
+    }
+
+    .gal figure {
+      position: relative;
+      border-radius: 22px;
+      overflow: hidden;
+      background: #fffdf7;
+      border: 1px solid rgba(168, 134, 45, .3);
+      box-shadow: 0 16px 40px rgba(28, 58, 42, .12);
+      padding: 2rem
+    }
+
+    .gal img {
+      margin: 0 auto;
+      max-height: 420px;
+      object-fit: contain;
+      transition: transform .5s
+    }
+
+    .gal figure:hover img {
+      transform: scale(1.04)
+    }
+
+    .gal figcaption {
+      text-align: center;
+      margin-top: 1.2rem;
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      color: var(--green)
+    }
+
+    .gal figcaption small {
+      display: block;
+      font-family: var(--sans);
+      font-size: .72rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--gold)
+    }
+
+    @media(max-width:720px) {
+      .gal {
+        grid-template-columns: 1fr
+      }
+    }
+
+    /* timeline */
+    .tl {
+      position: relative;
+      max-width: 760px;
+      margin: 0 auto
+    }
+
+    .tl::before {
+      content: "";
+      position: absolute;
+      left: 27px;
+      top: 8px;
+      bottom: 8px;
+      width: 1px;
+      background: linear-gradient(var(--gold), rgba(168, 134, 45, .15))
+    }
+
+    .step {
+      position: relative;
+      padding: 0 0 2.8rem 84px
+    }
+
+    .step:last-child {
+      padding-bottom: 0
+    }
+
+    .step .num {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--green), #2c5540);
+      color: var(--gold-l);
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--gold);
+      box-shadow: 0 8px 20px rgba(28, 58, 42, .3)
+    }
+
+    .step h3 {
+      font-size: 1.45rem;
+      margin-bottom: .35rem
+    }
+
+    .step p {
+      color: #54604a;
+      font-size: .95rem;
+      max-width: 36rem
+    }
+
+    .step b {
+      color: var(--green)
+    }
+
+    /* policy */
+    .policy {
+      background: linear-gradient(135deg, #1c3a2a, #254a35);
+      border-radius: 24px;
+      padding: clamp(2.2rem, 5vw, 3.6rem);
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1.8rem;
+      align-items: center;
+      border: 1px solid rgba(201, 168, 76, .4);
+      box-shadow: 0 24px 60px rgba(28, 58, 42, .35)
+    }
+
+    .policy .ico {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      border: 1px solid var(--gold-l);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold-l);
+      font-family: var(--serif);
+      font-size: 1.6rem
+    }
+
+    .policy h3 {
+      color: var(--cream);
+      font-size: clamp(1.4rem, 3vw, 1.9rem);
+      margin-bottom: .4rem
+    }
+
+    .policy p {
+      color: #cfd8c6;
+      font-size: .95rem;
+      max-width: 44rem
+    }
+
+    .policy b {
+      color: var(--gold-l)
+    }
+
+    @media(max-width:620px) {
+      .policy {
+        grid-template-columns: 1fr;
+        text-align: center
+      }
+
+      .policy .ico {
+        margin: 0 auto
+      }
+    }
 
 
-/* occasions */
-.occ{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.4rem}
-.occ div{background:#fffdf7;border:1px solid rgba(168,134,45,.25);border-radius:16px;padding:1.7rem 1.5rem;text-align:center;box-shadow:0 8px 24px rgba(28,58,42,.07);transition:transform .3s,box-shadow .3s}
-.occ div:hover{transform:translateY(-5px);box-shadow:0 18px 36px rgba(28,58,42,.14)}
-.occ .oi{font-family:var(--serif);font-size:1.7rem;color:var(--gold);display:block;margin-bottom:.5rem}
-.occ h3{font-size:1.25rem;margin-bottom:.4rem}
-.occ p{font-size:.86rem;color:#54604a}
-.kitchen{text-align:center;max-width:600px;margin:3rem auto 0;font-family:var(--serif);font-size:1.3rem;font-style:italic;color:var(--green)}
-.kitchen small{display:block;font-family:var(--sans);font-style:normal;font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-top:.6rem}
+    /* occasions */
+    .occ {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.4rem
+    }
 
-/* footer */
-footer{background:var(--green);color:#b9c6ae;padding:3.5rem 0 2rem;margin-top:2rem}
-.f-in{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-between;align-items:flex-start;border-bottom:1px solid rgba(201,168,76,.25);padding-bottom:2rem;margin-bottom:1.6rem}
-.f-brand{display:flex;align-items:center;gap:.8rem}
-.f-brand img{width:56px;height:56px;border-radius:50%}
-.f-brand div b{font-family:var(--serif);font-size:1.3rem;letter-spacing:.12em;color:var(--cream);display:block}
-.f-brand div span{font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-l)}
-.f-terms{font-size:.78rem;max-width:340px;line-height:1.7}
-.f-low{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;font-size:.75rem;letter-spacing:.08em}
-.f-low a{color:var(--gold-l);text-decoration:none}
+    .occ div {
+      background: #fffdf7;
+      border: 1px solid rgba(168, 134, 45, .25);
+      border-radius: 16px;
+      padding: 1.7rem 1.5rem;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(28, 58, 42, .07);
+      transition: transform .3s, box-shadow .3s
+    }
 
-/* whatsapp float */
-.wa-float{position:fixed;right:1.4rem;bottom:1.4rem;z-index:60;width:58px;height:58px;border-radius:50%;background:linear-gradient(135deg,#25d366,#128c7e);display:flex;align-items:center;justify-content:center;box-shadow:0 12px 28px rgba(18,140,126,.45);transition:transform .25s}
-.wa-float:hover{transform:scale(1.08)}
-.wa-float svg{width:30px;height:30px;fill:#fff}
-</style>
+    .occ div:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 36px rgba(28, 58, 42, .14)
+    }
+
+    .occ .oi {
+      font-family: var(--serif);
+      font-size: 1.7rem;
+      color: var(--gold);
+      display: block;
+      margin-bottom: .5rem
+    }
+
+    .occ h3 {
+      font-size: 1.25rem;
+      margin-bottom: .4rem
+    }
+
+    .occ p {
+      font-size: .86rem;
+      color: #54604a
+    }
+
+    .kitchen {
+      text-align: center;
+      max-width: 600px;
+      margin: 3rem auto 0;
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      font-style: italic;
+      color: var(--green)
+    }
+
+    .kitchen small {
+      display: block;
+      font-family: var(--sans);
+      font-style: normal;
+      font-size: .72rem;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-top: .6rem
+    }
+
+    /* footer */
+    footer {
+      background: var(--green);
+      color: #b9c6ae;
+      padding: 3.5rem 0 2rem;
+      margin-top: 2rem
+    }
+
+    .f-in {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 1px solid rgba(201, 168, 76, .25);
+      padding-bottom: 2rem;
+      margin-bottom: 1.6rem
+    }
+
+    .f-brand {
+      display: flex;
+      align-items: center;
+      gap: .8rem
+    }
+
+    .f-brand img {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%
+    }
+
+    .f-brand div b {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      letter-spacing: .12em;
+      color: var(--cream);
+      display: block
+    }
+
+    .f-brand div span {
+      font-size: .68rem;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: var(--gold-l)
+    }
+
+    .f-terms {
+      font-size: .78rem;
+      max-width: 340px;
+      line-height: 1.7
+    }
+
+    .f-low {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: space-between;
+      font-size: .75rem;
+      letter-spacing: .08em
+    }
+
+    .f-low a {
+      color: var(--gold-l);
+      text-decoration: none
+    }
+
+    /* whatsapp float */
+    .wa-float {
+      position: fixed;
+      right: 1.4rem;
+      bottom: 1.4rem;
+      z-index: 60;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #25d366, #128c7e);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 12px 28px rgba(18, 140, 126, .45);
+      transition: transform .25s
+    }
+
+    .wa-float:hover {
+      transform: scale(1.08)
+    }
+
+    .wa-float svg {
+      width: 30px;
+      height: 30px;
+      fill: #fff
+    }
+  </style>
 </head>
+
 <body>
 
-<nav id="nav">
-  <div class="wrap nav-in">
-    <a class="brand" href="#top">
-      <img src="assets/logo.png" alt="Teramo logo">
-      <span>TERAMO</span>
-    </a>
-    <ul class="nav-links">
-      <li><a href="#flavours">Flavours</a></li>
-      <li><a href="#labels">Collection</a></li>
-      <li><a href="#occasions">Occasions</a></li>
-      <li><a href="#process">How to Order</a></li>
-      <li class="cta-li"><a class="btn sm" href="https://wa.me/917975360103" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2Zm5.2 14.1c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.5c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1.1 2.2 1.4 2.5 1.5.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3 0 .2 0 .7-.2 1.3Z"/></svg>Order</a></li>
-    </ul>
-  </div>
-</nav>
+  <nav id="nav">
+    <div class="wrap nav-in">
+      <a class="brand" href="#top">
+        <img src="assets/logo.png" alt="Teramo logo">
+        <span>TERAMO</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#flavours">Flavours</a></li>
+        <li><a href="#labels">Collection</a></li>
+        <li><a href="#occasions">Occasions</a></li>
+        <li><a href="#process">How to Order</a></li>
+        <li class="cta-li"><a class="btn sm" href="https://wa.me/917975360103" target="_blank" rel="noopener"><svg
+              viewBox="0 0 24 24">
+              <path
+                d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2Zm5.2 14.1c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.5c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1.1 2.2 1.4 2.5 1.5.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3 0 .2 0 .7-.2 1.3Z" />
+            </svg>Order</a></li>
+      </ul>
+    </div>
+  </nav>
 
-<header id="top">
-  <div class="wrap hero">
-    <div class="rv in">
-      <span class="eyebrow">Teramo · Karnataka · GI-Based Desserts</span>
-      <h1>Karnataka's <em>GI harvests</em>, churned one small batch at a time.</h1>
-      <p class="lead">Ultra-local artisanal ice creams rooted in Karnataka's Geographical Indication treasures — Chikkamagaluru coffee, Coorg cardamom, Mysore betel leaf, Kolar guava and Malnad mango — folded into slow-churned cream. Simply local. Never mass-made.</p>
-      <div class="hero-actions">
-        <a class="btn" href="https://wa.me/917975360103" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2Zm5.2 14.1c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.5c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1.1 2.2 1.4 2.5 1.5.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3 0 .2 0 .7-.2 1.3Z"/></svg>Order on WhatsApp</a>
-        <a class="btn ghost" href="#flavours">Explore Flavours</a>
+  <header id="top">
+    <div class="wrap hero">
+      <div class="rv in">
+        <span class="eyebrow">Teramo · Karnataka · GI-Based Desserts</span>
+        <h1>Karnataka's <em>GI harvests</em>, churned one small batch at a time.</h1>
+        <p class="lead">Ultra-local artisanal ice creams rooted in Karnataka's Geographical Indication treasures —
+          Chikkamagaluru coffee, Coorg cardamom, Mysore betel leaf, Kolar guava and Malnad mango — folded into
+          slow-churned cream. Simply local. Never mass-made.</p>
+        <div class="hero-actions">
+          <a class="btn" href="https://wa.me/917975360103" target="_blank" rel="noopener"><svg viewBox="0 0 24 24">
+              <path
+                d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2Zm5.2 14.1c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.5c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1.1 2.2 1.4 2.5 1.5.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3 0 .2 0 .7-.2 1.3Z" />
+            </svg>Order on WhatsApp</a>
+          <a class="btn ghost" href="#flavours">Explore Flavours</a>
+        </div>
+        <div class="hero-meta">
+          <div><b>20–60</b><span>orders / week</span></div>
+          <div><b>7 days</b><span>advance booking</span></div>
+          <div><b>100%</b><span>GI-rooted craft</span></div>
+        </div>
       </div>
-      <div class="hero-meta">
-        <div><b>20–60</b><span>orders / week</span></div>
-        <div><b>7 days</b><span>advance booking</span></div>
-        <div><b>100%</b><span>GI-rooted craft</span></div>
+      <div class="hero-badge rv in"><img src="assets/logo.png" alt="Teramo — Simply Local emblem"></div>
+    </div>
+  </header>
+
+  <section class="sec" id="flavours">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow">The Flavour Menu</span>
+        <h2>Flavours of Karnataka</h2>
+        <p>Every profile begins with a GI-tagged ingredient of Karnataka — traced to its estate, plantation or orchard
+          district.</p>
+        <div class="rule"></div>
       </div>
-    </div>
-    <div class="hero-badge rv in"><img src="assets/logo.png" alt="Teramo — Simply Local emblem"></div>
-  </div>
-</header>
-
-<section class="sec" id="flavours">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <span class="eyebrow">The Flavour Menu</span>
-      <h2>Flavours of Karnataka</h2>
-      <p>Every profile begins with a GI-tagged ingredient of Karnataka — traced to its estate, plantation or orchard district.</p>
-      <div class="rule"></div>
-    </div>
-    <div class="grid">
-      <article class="card rv"><div class="swatch"><img src="assets/cardamom.jpg" alt="Coorg Cardamom ice cream" loading="lazy"></div><div class="card-b"><div class="tag">Rare Harvest</div><h3>Coorg Cardamom</h3><p>Green cardamom from shaded Coorg plantations, freshly crushed into a warm, aromatic spiced-cream base.</p><div class="igp">Coorg green cardamom GI</div></div></article>
-      <article class="card rv"><div class="swatch"><img src="assets/guava.jpg" alt="Guava ice cream" loading="lazy"></div><div class="card-b"><div class="tag">Orchard Pick</div><h3>Kolar Guava</h3><p>Sun-ripened Kolar guava churned into a bright, aromatic sorbetto-style cream, finished with fresh fruit.</p><div class="igp">Kolar district guava</div></div></article>
-      <article class="card rv"><div class="swatch"><img class="z" src="assets/mysore-paan.jpg" alt="Mysore Paan ice cream" loading="lazy"></div><div class="card-b"><div class="tag">Heritage</div><h3>Mysore Paan</h3><p>Fragrant Mysore betel leaf infused with gulkand rose and fennel — the royal after-dinner ritual, reimagined as ice cream.</p><div class="igp">Mysore betel leaf tradition</div></div></article>
-      <article class="card rv"><div class="swatch"><img class="z" src="assets/jackfruit.jpg" alt="Malnad Jackfruit ice cream" loading="lazy"></div><div class="card-b"><div class="tag">Malnad Harvest</div><h3>Malnad Jackfruit</h3><p>Ripe Malnad jackfruit, slow-churned into a golden, custardy cream with roasted cashew pieces.</p><div class="igp">Malnad region jackfruit</div></div></article>
-      <article class="card rv"><div class="swatch"><img src="assets/kokum.jpg" alt="Coastal Kokum ice cream" loading="lazy"></div><div class="card-b"><div class="tag">Coastal Series</div><h3>Coastal Kokum</h3><p>Deep-purple Konkan kokum, tangy and cooling, folded into cream with a ribbon of wild berry compote.</p><div class="igp">Konkan coast kokum</div></div></article>
-      <article class="card rv"><div class="swatch"><img class="z" src="assets/alphonso-mango.jpg" alt="Ratnagiri Alphonso Mango ice cream" loading="lazy"></div><div class="card-b"><div class="tag">King of Fruits</div><h3>Ratnagiri Alphonso Mango</h3><p>Golden Alphonso pulp from Ratnagiri orchards, churned rich and velvety — the crown of the collection.</p><div class="igp">Ratnagiri GI Alphonso</div></div></article>
-    </div>
-  </div>
-</section>
-
-<section class="sec" id="labels" style="background:var(--cream-d)">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <span class="eyebrow">The Atelier</span>
-      <h2>The Jar Collection</h2>
-      <p>Every batch is hand-jarred and sealed under the Teramo mark — a small archive of every GI harvest we've frozen.</p>
-      <div class="rule"></div>
-    </div>
-    <div class="gal">
-      <figure class="rv"><img src="assets/jars-collection.jpg" alt="Teramo jar collection — Malnad Jackfruit, Mysore Paan, Coorg Cardamom, Ratnagiri Alphonso Mango" loading="lazy"><figcaption>The Full Collection<small>Jackfruit · Paan · Cardamom · Alphonso Mango</small></figcaption></figure>
-      <figure class="rv"><img src="assets/jars-cardamom-guava.jpg" alt="Coorg Cardamom and Kolar Guava jars" loading="lazy"><figcaption>Coorg Cardamom & Kolar Guava<small>Hand-Jarred · Sealed Fresh</small></figcaption></figure>
-      <figure class="rv"><img src="assets/jars-jackfruit-paan.jpg" alt="Malnad Jackfruit and Mysore Paan jars" loading="lazy"><figcaption>Malnad Jackfruit & Mysore Paan<small>Hand-Jarred · Sealed Fresh</small></figcaption></figure>
-    </div>
-  </div>
-</section>
-
-<section class="sec" id="process">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <span class="eyebrow">How to Order</span>
-      <h2>How Your Batch Comes to Life</h2>
-      <div class="rule"></div>
-    </div>
-    <div class="tl">
-      <div class="step rv"><div class="num">1</div><h3>Batch Booking</h3><p>Orders are placed <b>one week in advance</b>. We strictly craft micro-batches of <b>20 to 60 total orders weekly</b> — once the week is full, the churn closes.</p></div>
-      <div class="step rv"><div class="num">2</div><h3>Confirmation & Invoice</h3><p>Upon booking, an <b>advance payment invoice</b> is generated. Production begins <b>immediately on payment confirmation</b> — coffee, cardamom and fruit sourced fresh for your batch.</p></div>
-      <div class="step rv"><div class="num">3</div><h3>Delivery / Pickup</h3><p>Your order is <b>safely prepared, sealed and fulfilled on schedule</b> — collected at the atelier or delivered chilled to your door.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="sec" style="padding-top:0">
-  <div class="wrap">
-    <div class="policy rv">
-      <div class="ico">✦</div>
-      <div>
-        <h3>Cancellation, Gracefully Handled</h3>
-        <p>Plans change — we understand. Cancellations are <b>fully permitted up to 4 days before</b> your scheduled fulfilment date, with the advance returned in full. Within 4 days, production is already underway and orders are final.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<section class="sec" id="occasions" style="background:var(--cream-d)">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <span class="eyebrow">Celebrations & Gatherings</span>
-      <h2>For Every Occasion Worth Celebrating</h2>
-      <p>From an intimate table of ten to a full house of sixty — we serve batches of <b>10 to 60 units</b>, crafted to order for your moment.</p>
-      <div class="rule"></div>
-    </div>
-    <div class="occ">
-      <div class="rv"><span class="oi">✦</span><h3>Corporate Parties</h3><p>Elevate office celebrations and client evenings with hand-jarred GI flavours your team will remember.</p></div>
-      <div class="rv"><span class="oi">✦</span><h3>Office Gatherings</h3><p>Team milestones, festive days or Friday treats — delivered chilled, ready to serve.</p></div>
-      <div class="rv"><span class="oi">✦</span><h3>Birthday Parties</h3><p>Make birthdays sweeter with a curated spread of flavours for every age at the table.</p></div>
-      <div class="rv"><span class="oi">✦</span><h3>Events & Special Occasions</h3><p>Weddings, housewarmings, festivals or any day worth marking — we're here to serve.</p></div>
-    </div>
-    <p class="kitchen rv">"Every jar comes from a freshly made, hygienically maintained kitchen — churned with love, sealed with care."<small>Fresh · Hygienic · Made with Love</small></p>
-  </div>
-</section>
-
-<section class="sec" style="text-align:center;padding-top:0">
-  <div class="wrap rv">
-    <span class="eyebrow">Batches close weekly</span>
-    <h2 style="font-size:clamp(1.9rem,4vw,2.8rem);margin:.6rem 0 1.6rem">Reserve your place in this week's churn</h2>
-    <a class="btn" href="https://wa.me/917975360103" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2Zm5.2 14.1c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.5c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1.1 2.2 1.4 2.5 1.5.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3 0 .2 0 .7-.2 1.3Z"/></svg>Order on WhatsApp</a>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap">
-    <div class="f-in">
-      <div class="f-brand">
-        <img src="assets/logo.png" alt="Teramo emblem">
-        <div><b>TERAMO</b><span>Simply Local</span></div>
-      </div>
-      <div class="f-terms">
-        <b style="font-family:var(--serif);font-size:1rem;color:var(--cream);display:block;margin-bottom:.4rem">We Cater To</b>
-        Corporate parties · Office gatherings · Birthday parties · Events & special occasions — from 10 up to 60 units, freshly and hygienically made, with love.
-      </div>
-      <div class="f-terms">
-        <b style="font-family:var(--serif);font-size:1rem;color:var(--cream);display:block;margin-bottom:.4rem">Operational Terms</b>
-        Weekly micro-batches of 20–60 orders · booking 7 days in advance · advance invoice on confirmation · free cancellation until 4 days before fulfilment.
+      <div class="grid">
+        <article class="card rv">
+          <div class="swatch"><img src="assets/cardamom.jpg" alt="Coorg Cardamom ice cream" loading="lazy"></div>
+          <div class="card-b">
+            <div class="tag">Rare Harvest</div>
+            <h3>Coorg Cardamom</h3>
+            <p>Green cardamom from shaded Coorg plantations, freshly crushed into a warm, aromatic spiced-cream base.
+            </p>
+            <div class="igp">Coorg green cardamom GI</div>
+          </div>
+        </article>
+        <article class="card rv">
+          <div class="swatch"><img src="assets/guava.jpg" alt="Guava ice cream" loading="lazy"></div>
+          <div class="card-b">
+            <div class="tag">Orchard Pick</div>
+            <h3>Kolar Guava</h3>
+            <p>Sun-ripened Kolar guava churned into a bright, aromatic sorbetto-style cream, finished with fresh fruit.
+            </p>
+            <div class="igp">Kolar district guava</div>
+          </div>
+        </article>
+        <article class="card rv">
+          <div class="swatch"><img class="z" src="assets/mysore-paan.jpg" alt="Mysore Paan ice cream" loading="lazy">
+          </div>
+          <div class="card-b">
+            <div class="tag">Heritage</div>
+            <h3>Mysore Paan</h3>
+            <p>Fragrant Mysore betel leaf infused with gulkand rose and fennel — the royal after-dinner ritual,
+              reimagined as ice cream.</p>
+            <div class="igp">Mysore betel leaf tradition</div>
+          </div>
+        </article>
+        <article class="card rv">
+          <div class="swatch"><img class="z" src="assets/jackfruit.jpg" alt="Malnad Jackfruit ice cream" loading="lazy">
+          </div>
+          <div class="card-b">
+            <div class="tag">Malnad Harvest</div>
+            <h3>Malnad Jackfruit</h3>
+            <p>Ripe Malnad jackfruit, slow-churned into a golden, custardy cream with roasted cashew pieces.</p>
+            <div class="igp">Malnad region jackfruit</div>
+          </div>
+        </article>
+        <article class="card rv">
+          <div class="swatch"><img src="assets/kokum.jpg" alt="Coastal Kokum ice cream" loading="lazy"></div>
+          <div class="card-b">
+            <div class="tag">Coastal Series</div>
+            <h3>Coastal Kokum</h3>
+            <p>Deep-purple Konkan kokum, tangy and cooling, folded into cream with a ribbon of wild berry compote.</p>
+            <div class="igp">Konkan coast kokum</div>
+          </div>
+        </article>
+        <article class="card rv">
+          <div class="swatch"><img class="z" src="assets/alphonso-mango.jpg" alt="Ratnagiri Alphonso Mango ice cream"
+              loading="lazy"></div>
+          <div class="card-b">
+            <div class="tag">King of Fruits</div>
+            <h3>Ratnagiri Alphonso Mango</h3>
+            <p>Golden Alphonso pulp from Ratnagiri orchards, churned rich and velvety — the crown of the collection.</p>
+            <div class="igp">Ratnagiri GI Alphonso</div>
+          </div>
+        </article>
       </div>
     </div>
-    <div class="f-low">
-      <span>© 2026 Teramo · Simply Local. All rights reserved.</span>
-      <span>Handcrafted · Natural · Premium — <a href="https://wa.me/917975360103" target="_blank" rel="noopener">Chat with us</a></span>
+  </section>
+
+  <section class="sec" id="labels" style="background:var(--cream-d)">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow">The Atelier</span>
+        <h2>The Jar Collection</h2>
+        <p>Every batch is hand-jarred and sealed under the Teramo mark — a small archive of every GI harvest we've
+          frozen.</p>
+        <div class="rule"></div>
+      </div>
+      <div class="gal">
+        <figure class="rv"><img src="assets/jars-collection.jpg"
+            alt="Teramo jar collection — Malnad Jackfruit, Mysore Paan, Coorg Cardamom, Ratnagiri Alphonso Mango"
+            loading="lazy">
+          <figcaption>The Full Collection<small>Jackfruit · Paan · Cardamom · Alphonso Mango</small></figcaption>
+        </figure>
+        <figure class="rv"><img src="assets/jars-cardamom-guava.jpg" alt="Coorg Cardamom and Kolar Guava jars"
+            loading="lazy">
+          <figcaption>Coorg Cardamom & Kolar Guava<small>Hand-Jarred · Sealed Fresh</small></figcaption>
+        </figure>
+        <figure class="rv"><img src="assets/jars-jackfruit-paan.jpg" alt="Malnad Jackfruit and Mysore Paan jars"
+            loading="lazy">
+          <figcaption>Malnad Jackfruit & Mysore Paan<small>Hand-Jarred · Sealed Fresh</small></figcaption>
+        </figure>
+      </div>
     </div>
-  </div>
-</footer>
+  </section>
 
-<a class="wa-float" href="https://wa.me/917975360103" target="_blank" rel="noopener" aria-label="Order on WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2Zm5.2 14.1c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.5c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1.1 2.2 1.4 2.5 1.5.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3 0 .2 0 .7-.2 1.3Z"/></svg></a>
+  <section class="sec" id="process">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow">How to Order</span>
+        <h2>How Your Batch Comes to Life</h2>
+        <div class="rule"></div>
+      </div>
+      <div class="tl">
+        <div class="step rv">
+          <div class="num">1</div>
+          <h3>Batch Booking</h3>
+          <p>Orders are placed <b>one week in advance</b>. We strictly craft micro-batches of <b>20 to 60 total orders
+              weekly</b> — once the week is full, the churn closes.</p>
+        </div>
+        <div class="step rv">
+          <div class="num">2</div>
+          <h3>Confirmation & Invoice</h3>
+          <p>Upon booking, an <b>advance payment invoice</b> is generated. Production begins <b>immediately on payment
+              confirmation</b> — coffee, cardamom and fruit sourced fresh for your batch.</p>
+        </div>
+        <div class="step rv">
+          <div class="num">3</div>
+          <h3>Delivery / Pickup</h3>
+          <p>Your order is <b>safely prepared, sealed and fulfilled on schedule</b> — collected at the atelier or
+            delivered chilled to your door.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<script>
-const WA="https://wa.me/917975360103?text="+encodeURIComponent("Namaste! I would like to explore ordering your Karnataka GI ice cream batches from Teramo...");
-document.querySelectorAll('a[href="https://wa.me/917975360103"]').forEach(a=>a.href=WA);
-const io=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add('in')),{threshold:.15});
-document.querySelectorAll('.rv').forEach(el=>io.observe(el));
-addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('solid',scrollY>40),{passive:true});
-</script>
+  <section class="sec" style="padding-top:0">
+    <div class="wrap">
+      <div class="policy rv">
+        <div class="ico">✦</div>
+        <div>
+          <h3>Cancellation, Gracefully Handled</h3>
+          <p>Plans change — we understand. Cancellations are <b>fully permitted up to 4 days before</b> your scheduled
+            fulfilment date, with the advance returned in full. Within 4 days, production is already underway and orders
+            are final.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="sec" id="occasions" style="background:var(--cream-d)">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow">Celebrations & Gatherings</span>
+        <h2>For Every Occasion Worth Celebrating</h2>
+        <p>From an intimate table of ten to a full house of sixty — we serve batches of <b>10 to 60 units</b>, crafted
+          to order for your moment.</p>
+        <div class="rule"></div>
+      </div>
+      <div class="occ">
+        <div class="rv"><span class="oi">✦</span>
+          <h3>Corporate Parties</h3>
+          <p>Elevate office celebrations and client evenings with hand-jarred GI flavours your team will remember.</p>
+        </div>
+        <div class="rv"><span class="oi">✦</span>
+          <h3>Office Gatherings</h3>
+          <p>Team milestones, festive days or Friday treats — delivered chilled, ready to serve.</p>
+        </div>
+        <div class="rv"><span class="oi">✦</span>
+          <h3>Birthday Parties</h3>
+          <p>Make birthdays sweeter with a curated spread of flavours for every age at the table.</p>
+        </div>
+        <div class="rv"><span class="oi">✦</span>
+          <h3>Events & Special Occasions</h3>
+          <p>Weddings, housewarmings, festivals or any day worth marking — we're here to serve.</p>
+        </div>
+      </div>
+      <p class="kitchen rv">"Every jar comes from a freshly made, hygienically maintained kitchen — churned with love,
+        sealed with care."<small>Fresh · Hygienic · Made with Love</small></p>
+    </div>
+  </section>
+
+  <section class="sec" style="text-align:center;padding-top:0">
+    <div class="wrap rv">
+      <span class="eyebrow">Batches close weekly</span>
+      <h2 style="font-size:clamp(1.9rem,4vw,2.8rem);margin:.6rem 0 1.6rem">Reserve your place in this week's churn</h2>
+      <a class="btn" href="https://wa.me/917975360103" target="_blank" rel="noopener"><svg viewBox="0 0 24 24">
+          <path
+            d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2Zm5.2 14.1c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.5c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1.1 2.2 1.4 2.5 1.5.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3 0 .2 0 .7-.2 1.3Z" />
+        </svg>Order on WhatsApp</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="f-in">
+        <div class="f-brand">
+          <img src="assets/logo.png" alt="Teramo emblem">
+          <div><b>TERAMO</b><span>Simply Local</span></div>
+        </div>
+        <div class="f-terms">
+          <b style="font-family:var(--serif);font-size:1rem;color:var(--cream);display:block;margin-bottom:.4rem">We
+            Cater To</b>
+          Corporate parties · Office gatherings · Birthday parties · Events & special occasions — from 10 up to 60
+          units, freshly and hygienically made, with love.
+        </div>
+        <div class="f-terms">
+          <b style="font-family:var(--serif);font-size:1rem;color:var(--cream);display:block;margin-bottom:.4rem">Operational
+            Terms</b>
+          Weekly micro-batches of 20–60 orders · booking 7 days in advance · advance invoice on confirmation · free
+          cancellation until 4 days before fulfilment.
+        </div>
+      </div>
+      <div class="f-low">
+        <span>© 2026 Teramo · Simply Local. All rights reserved.</span>
+        <span>Handcrafted · Natural · Premium — <a href="https://wa.me/917975360103" target="_blank" rel="noopener">Chat
+            with us</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <a class="wa-float" href="https://wa.me/917975360103" target="_blank" rel="noopener"
+    aria-label="Order on WhatsApp"><svg viewBox="0 0 24 24">
+      <path
+        d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2Zm5.2 14.1c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.5c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1.1 2.2 1.4 2.5 1.5.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3 0 .2 0 .7-.2 1.3Z" />
+    </svg></a>
+
+  <script>
+    const WA = "https://wa.me/917975360103?text=" + encodeURIComponent("Namaste! I would like to explore ordering your Karnataka GI ice cream batches from Teramo...");
+    document.querySelectorAll('a[href="https://wa.me/917975360103"]').forEach(a => a.href = WA);
+    const io = new IntersectionObserver(es => es.forEach(e => e.isIntersecting && e.target.classList.add('in')), { threshold: .15 });
+    document.querySelectorAll('.rv').forEach(el => io.observe(el));
+    addEventListener('scroll', () => document.getElementById('nav').classList.toggle('solid', scrollY > 40), { passive: true });
+  </script>
 </body>
+
 </html>
